@@ -36,12 +36,3 @@ class CountVectorizer:
                 row.extend([0] * (voc_size - row_size))
 
         return matrix
-
-
-c = CountVectorizer()
-
-corpus = ['one Two Three four Five']
-
-m = c.fit_transform(corpus)
-print(c.get_feature_names())
-print(m)
