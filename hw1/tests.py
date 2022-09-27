@@ -1,5 +1,5 @@
 import unittest
-from CountVectorizer import CountVectorizer
+from count_vectorizer import CountVectorizer
 
 
 class TestCountVectorizer(unittest.TestCase):
@@ -10,10 +10,11 @@ class TestCountVectorizer(unittest.TestCase):
                     'Crock Pot Pasta Never boil pasta again',
                     'Pasta Pomodoro Fresh ingredients Parmesan to taste'
                 ],
-                'feature_names': ['crock', 'pot', 'pasta', 'never', 'boil', 'again', 'pomodoro',
-                                    'fresh', 'ingredients', 'parmesan', 'to', 'taste'],
+                'feature_names': ['crock', 'pot', 'pasta', 'never', 'boil',
+                                  'again', 'pomodoro', 'fresh', 'ingredients',
+                                  'parmesan', 'to', 'taste'],
                 'count_matrix': [[1, 1, 2, 1, 1, 1, 0, 0, 0, 0, 0, 0],
-                                    [0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1]],
+                                 [0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1]],
             },
             {
                 'corpus': ['one Two Three four Five'],
@@ -26,7 +27,8 @@ class TestCountVectorizer(unittest.TestCase):
             vectorizer = CountVectorizer()
             count_matrix = vectorizer.fit_transform(t['corpus'])
 
-            self.assertEqual(vectorizer.get_feature_names(), t['feature_names'])
+            self.assertEqual(vectorizer.get_feature_names(),
+                             t['feature_names'])
             self.assertEqual(count_matrix, t['count_matrix'])
 
 

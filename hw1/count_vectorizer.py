@@ -1,14 +1,13 @@
 from typing import List
 
+
 class CountVectorizer:
     def __init__(self, lowercase: bool = True) -> None:
         self.lowercase = lowercase
         self.__vocabulary = []
 
-
     def get_feature_names(self) -> List[str]:
         return self.__vocabulary
-
 
     def fit_transform(self, corpus: List[str]) -> List[List[int]]:
         self.__vocabulary = []
