@@ -20,6 +20,23 @@ class TestAdvert(unittest.TestCase):
 
         self.assertEqual(lesson_ad.location.address, 'город Москва, Лесная, 7')
 
+    def test_keywords(self):
+        corgi_str = """
+            {
+                "title": "Вельш-корги",
+                "price": 1000,
+                "class": "dogs",
+                "location": {
+                    "address": "сельское поселение Ельдигинское, поселок\
+                    санатория Тишково, 25"
+                }
+            }
+        """
+
+        corgi_dict = json.loads(corgi_str)
+        corgi = Advert(corgi_dict)
+        self.assertIn(corgi.class_, 'dogs')
+
     def test_negative_price(self):
         lesson_str = '{"title": "python", "price": -1}'
 
