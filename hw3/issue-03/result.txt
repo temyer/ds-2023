@@ -1,0 +1,9 @@
+test_argument_length (test_fit_transform_unit.TestFitTransform) ... ok
+test_basic_fit_transform (test_fit_transform_unit.TestFitTransform) ... ok
+test_passing_arguments (test_fit_transform_unit.TestFitTransform) ... ok
+test_repeated_fit_transform (test_fit_transform_unit.TestFitTransform) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.000s
+
+OK
